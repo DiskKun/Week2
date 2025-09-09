@@ -267,12 +267,13 @@ MonoBehaviour:
     age: 18
     traits: 
     simColour: {r: 0, g: 0.49056602, b: 0.0066328044, a: 1}
-  - simName: Diayu
+  - simName: Daiyu
     age: 17
     traits: 
     simColour: {r: 0, g: 0.021152839, b: 0.7264151, a: 1}
   simPrefab: {fileID: 842613101031544277, guid: 027ddee44c9dc1a4dbfa978873c1a9d8, type: 3}
   simsHolder: {fileID: 955646218}
+  myNumber: 0
 --- !u!1 &1550008086
 GameObject:
   m_ObjectHideFlags: 0
