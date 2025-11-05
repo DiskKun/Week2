@@ -6,12 +6,8 @@ using UnityEngine;
 public class SimManager : MonoBehaviour
 {
     public List<SimData> sims = new List<SimData>();
-
-    [Header("Variables 'n stuff")]
     public GameObject simPrefab;
     public Transform simsHolder;
-    [Range(0, 10)] public float myNumber;
-
 
     //On initialization, the SimManager will create Sim entities for each instance of SimData it has stored.
     void Start()
@@ -23,10 +19,6 @@ public class SimManager : MonoBehaviour
     }
 
     //Given data about a Sim, it creates the entity associated with that data
-    /// <summary>
-    /// this is a function
-    /// </summary>
-    /// <param name="simData"></param>
     public void CreateSimEntity(SimData simData)
     { 
         GameObject simObject = Instantiate(simPrefab, simsHolder);
@@ -34,10 +26,14 @@ public class SimManager : MonoBehaviour
         sim.Initialize(simData);
     }
 
-    [ContextMenu("Say Hi")]
-    public void PrintHello()
+    public void example()
     {
-        Debug.Log("Hi!");
+
+        string data = "bob, 23, 4,4";
+        string[] dataArray = data.Split(",");
+        SimData sim = new SimData();
+        sim.simName = dataArray[0];
+        int.TryParse(dataArray[1], out sim.age);
     }
 
 }

@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 //Data class used for propagating the details of a Sim when creating them in the simulation.
-[Serializable]
+[System.Serializable]
 public class SimData
 {
     //The name of the Sim.
