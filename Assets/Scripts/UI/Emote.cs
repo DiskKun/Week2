@@ -14,7 +14,7 @@ public class Emote : MonoBehaviour
         //since you can see how it will look, instead of it being scaled to zero
         emotionUI.transform.localScale = Vector3.zero;
     }
-    public void ShowEmote(SimData.Need need)
+    public void ShowEmote(NeedData.NeedType need)
     {
         Emotion e = emotionSprites.Find(x => x.name == need);
 
@@ -26,30 +26,13 @@ public class Emote : MonoBehaviour
         //vibrato: how much it oscillates about the target value,
         //default is 10 which looks CRAYYYYYZY for our lil sprite
         //elasticity: damping on the springyness
-
-        Sequence sequence = DOTween.Sequence();
-        sequence.Append(emotionUI.transform.DOScale(Vector3.one, 1));
-        sequence.Append(emotionUI.transform.DOShakeRotation(2));
-        sequence.Append(emotionUI.transform.DOScale(Vector3.zero, 1));
-
-        sequence.OnComplete(() => {
-
-        });
-
-
-
-
-        //emotionUI.transform.rotation = Quaternion.identity;
-        //emotionUI.transform.DOPunchScale(Vector3.one, 2, 1, 1).SetEase(Ease.InOutSine).OnComplete(() =>
-        //{
-        //    emotionUI.transform.DOShakeRotation(1);
-        //});
+        emotionUI.transform.DOPunchScale(Vector3.one, 2, 1, 1).SetEase(Ease.InFlash);
     }
 }
 
 [System.Serializable]
 public class Emotion
 {
-    public SimData.Need name;
+    public NeedData.NeedType name;
     public Sprite sprite;
 }

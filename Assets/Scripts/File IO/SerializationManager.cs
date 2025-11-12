@@ -77,9 +77,9 @@ public class SerializationManager : MonoBehaviour
                 Debug.Log(csvSplit[0]);
                 //Convert csv back into a SimData object
                 SimData sim = new SimData();
-                sim.simName = csvSplit[0];
-                sim.age = int.Parse(csvSplit[1]);
-                sim.simColour = new Color(float.Parse(csvSplit[2]), float.Parse(csvSplit[3]), float.Parse(csvSplit[4]), float.Parse(csvSplit[5]));
+                //sim.simName = csvSplit[0];
+                //sim.age = int.Parse(csvSplit[1]);
+                //sim.simColour = new Color(float.Parse(csvSplit[2]), float.Parse(csvSplit[3]), float.Parse(csvSplit[4]), float.Parse(csvSplit[5]));
                 for (int i = 0; i < csvSplit.Length - 6; i++)
                 {
                     sim.traits.Add((SimData.Trait)int.Parse(csvSplit[6 + i]));
