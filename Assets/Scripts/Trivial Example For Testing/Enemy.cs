@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         _health -= amount;
         sr.color = col.Evaluate(EnemyData.Map(_health, 0, maxHealth, 0, 1));
-        if (_health < 0 )
+        if (_health <= 0 )
         {
             _health = 0;
             _isDead = true;
